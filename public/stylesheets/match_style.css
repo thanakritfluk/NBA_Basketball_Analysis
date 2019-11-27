@@ -7,12 +7,45 @@
 /*    color: #00B7FF;*/
 /*}*/
 
-#myChart{
+#myChart {
     width: 200px;
     height: 500px;
     margin: 0 auto;
 }
 
-body{
+.chart-wrapper {
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+}
+
+.match_body {
+    font-family: 'Alfa Slab One', cursive;
+    text-align: center;
     /*background-color: #153b56;*/
 }
+
+.match_title {
+    margin: 40px auto;
+}
+
+.input{
+    margin-left: 297px;
+}
+
+.team_input {
+    /*width: 10px;*/
+    margin: 40px 20px;
+}
+
+.match_input {
+    width: 200px;
+    height: 45px;
+    /*background-color: #3CBC8D;*/
+}
+
+.vs {
+    font-size: 20px;
+    margin-top: 60px;
+}
+
