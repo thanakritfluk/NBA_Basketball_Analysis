@@ -23,7 +23,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', dashboardRouter);
-app.use('/match_compare', matchRouter);
+app.use('/match', matchRouter);
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler

@@ -4,8 +4,8 @@ var data = {
     labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
     // Our series array that contains series objects or in this case series data arrays
     series: [
-    [5, 2, 4, 2, 0]
-  ]
+        [5, 2, 4, 2, 0]
+    ]
 };
 
 
