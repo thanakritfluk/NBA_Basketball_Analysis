@@ -1,19 +1,41 @@
-console.log("Js import success");
-var data = {
-    // A labels array that can contain any sort of values
-    labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
-    // Our series array that contains series objects or in this case series data arrays
-    series: [
-        [5, 2, 4, 2, 0]
-    ]
-};
+let ctx = document.getElementById('myChart').getContext('2d');
+let labels = ['Pizza 🍕', 'Taco 🌮', 'Hot Dog 🌭'];
+let colorHex = ['#FB3640', '#EFCA08', '#43AA8B', '#253D5B'];
 
-
-var option = {
-    width: 400,
-    height: 300
-};
-// Create a new line chart object where as first parameter we pass in a selector
-// that is resolving to our chart container element. The Second parameter
-// is the actual data object.
-new Chartist.Line('.ct-chart', data, option);
+let myChart = new Chart(ctx, {
+  type: 'pie',
+  data: {
+    datasets: [{
+      data: [30, 10, 40],
+      backgroundColor: colorHex
+    }],
+    labels: labels
+  },
+  options: {
+    responsive: true,
+    legend: {
+      position: 'bottom'
+    },
+    plugins: {
+      datalabels: {
+        color: '#fff',
+        anchor: 'end',
+        align: 'start',
+        offset: -10,
+        borderWidth: 2,
+        borderColor: '#fff',
+        borderRadius: 25,
+        backgroundColor: (context) => {
+          return context.dataset.backgroundColor;
+        },
+        font: {
+          weight: 'bold',
+          size: '10'
+        },
+        formatter: (value) => {
+          return value + ' %';
+        }
+      }
+    }
+  }
+});
