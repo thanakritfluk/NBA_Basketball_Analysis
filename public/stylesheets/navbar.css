@@ -1,0 +1,11 @@
+#logo-img {
+    height: 80px;
+    width: 65px;
+    margin: 0 20px;
+}
+
+.navbar {
+    font-family: 'Alfa Slab One', cursive;
+    font-style: italic;
+    font-size: 17px;
+}
