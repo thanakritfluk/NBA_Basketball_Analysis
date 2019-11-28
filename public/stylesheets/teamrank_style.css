@@ -1,0 +1,18 @@
+.teamRankPage {
+    text-align: center;
+   
+}
+
+#teamrank_header {
+    margin-top: 2rem;
+}
+
+.team_search {
+    background-color: white(248, 191, 168);
+    border: 0.2rem solid lightgrey;
+    border-radius: 1rem;
+    color: gray;
+    width: 20rem;
+    padding-left: 1rem;
+
+}

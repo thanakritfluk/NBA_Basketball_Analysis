@@ -1,5 +1,39 @@
 <!DOCTYPE html>
 <html>
+    <!-- <script>
+        window.onload = function () {
+        
+        var chart = new CanvasJS.Chart("chartContainer", {
+          animationEnabled: true,
+          theme: "light2",
+          title:{
+            text: "Simple Line Chart"
+          },
+          axisY:{
+            includeZero: false
+          },
+          data: [{        
+            type: "line",       
+            dataPoints: [
+              { y: 450 },
+              { y: 414},
+              { y: 520, indexLabel: "highest",markerColor: "red", markerType: "triangle" },
+              { y: 460 },
+              { y: 450 },
+              { y: 500 },
+              { y: 480 },
+              { y: 480 },
+              { y: 410 , indexLabel: "lowest",markerColor: "DarkSlateGrey", markerType: "cross" },
+              { y: 500 },
+              { y: 480 },
+              { y: 510 }
+            ]
+          }]
+        });
+        chart.render();
+        
+        }
+        </script> -->
 
     <head>
         <title><%= title %></title>
@@ -7,9 +41,25 @@
 
     <body>
         <%- include navbar %>
-        <div class="container">
-            team
-        </div>
-    </body>
+        <div class="container teamRankPage">
+            <h2 id="teamrank_header">Team's name</h2>
+            <div class="col-4-xs team_input">
+                <input  class="team_search match_input" type="text" placeholder="Team name">
+            </div>
+            <canvas id="myChart" width="400" height="180"></canvas>
+            <!-- <div class="dropdown">
+              <!-- <button class="btn btn-secondary dropdown-toggle teamname_dropdown" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Team's name
+              </button> -->
+              <!-- <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Action</a>
+              </div> -->
+              <!-- </div>  -->
+            </div>
+            <script src="/javascripts/typeahead.js"></script>
+            <script src="/javascripts/team_auto.js"></script>
+            <script src="/javascripts/teamline_chart.js"></script>
+   
+          </body>
 
 </html>
