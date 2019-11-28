@@ -7,8 +7,16 @@
 
     <body>
         <%- include navbar %>
-        <h1><%= title %></h1>
-        <p>Welcome to <%= title %></p>
+        <div class="container">
+            <div class="dashboard-row">
+                <div class="dashboard-col">
+                    <button class="dash-button" onclick="top10button()">Top 10</button>
+                </div>
+                <div class="dashboard-col">
+                    <button class="dash-button" onclick="rankTeam()">Team Rank</button>
+                </div>
+            </div>
+        </div>
     </body>
 
 </html>

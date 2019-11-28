@@ -1,0 +1,58 @@
+.index-row {
+  display: table;
+  width: 100%; 
+  table-layout: fixed; 
+  border-spacing: 50px;
+  left: 50%;
+  top: 20px;  
+  margin-top: 10px;  
+}
+
+.index-column{
+  display: table-cell;
+  text-align: center;
+  border: 2px solid grey;
+}
+
+.dashboard-col-ref {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  padding-left: 30px;
+  padding-right: 30px;    
+}
+
+.img-index {
+  width: 100%;
+  height: auto;
+}
+
+.index-text {
+  bottom: -20px;
+  color: gray;
+  font-size: 30px;
+}
+
+.img-dash {
+  padding-bottom: 60px;
+}
+
+.dashboard-row {
+  display: table;
+  width: 100%; 
+  table-layout: fixed; 
+  border-spacing: 20px;
+  border: 50px;
+  left: 50%;
+  top: 20px;  
+  margin-top: 10px;  
+}
+
+.dashboard-col {
+  display: table-cell;
+  text-align: center;
+  border: 2px solid grey; 
+}
+
+.dash-button {
+  width: 100%;
+}
