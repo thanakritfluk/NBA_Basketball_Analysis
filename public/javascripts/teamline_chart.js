@@ -99,9 +99,7 @@ var labels = [n-4,n-3,n-2,n-1,n];
 var team_title = '';
 
 // console.log(team_title);
-var data = jsonfile.jsonarray.map(function(e) {
-  return e.rank;
-});;
+var data = '';
 
 var config = {
   type: 'line',
@@ -142,5 +140,9 @@ var rank_chart = new Chart(ctx, config);
 
 $( "#search_submit" ).click(function() {
   rank_chart.options.title.text = val;
+  data = jsonfile.jsonarray.map(function(e) {
+    return e.rank;
+  });;
+  rank_chart.data.datasets[0].data = data;
   rank_chart.update();
 });
