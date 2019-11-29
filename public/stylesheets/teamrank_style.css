@@ -16,6 +16,7 @@
     border-radius: 1rem;
     color: gray;
     width: 20rem;
+    height: 2.8rem;
     padding-left: 1rem;
 
 }
@@ -29,6 +30,6 @@
     opacity: 0.8;
 }
 
-#myChart {
+#rank_chart {
     background: white;
 }

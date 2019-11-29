@@ -76,6 +76,7 @@ var jsonfile = {
   },
 ]
 };
+
 var val;
 $(".teamInput").typeahead({
   hint: true,
@@ -89,7 +90,7 @@ $(".teamInput").typeahead({
 }).on("change", function(e) {
 // do stuff with current `typeahead` `value`
 val = e.target.value; // `$(e.target).typeahead("val")
-console.log(val)
+// console.log(val)
 });
 
 var d = new Date();
@@ -136,7 +137,7 @@ var config = {
   }
 };
 
-var ctx = document.getElementById('myChart').getContext('2d');
+var ctx = document.getElementById('rank_chart').getContext('2d');
 var rank_chart = new Chart(ctx, config);
 
 $( "#search_submit" ).click(function() {
