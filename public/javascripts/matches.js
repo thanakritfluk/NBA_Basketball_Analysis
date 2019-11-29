@@ -66,7 +66,7 @@ $(".team_input_one").typeahead({
   name: 'nba_team',
   source: substringMatcher(nba_team)
 
-}).on("change", function(e) {
+}).on("typeahead:selected", function(e) {
 // do stuff with current `typeahead` `value`
   team1 = e.target.value; // `$(e.target).typeahead("val")
   console.log(team1)
@@ -81,7 +81,7 @@ $(".team_input_two").typeahead({
   name: 'nba_team',
   source: substringMatcher(nba_team)
 
-}).on("change", function(e) {
+}).on("typeahead:selected", function(e) {
 // do stuff with current `typeahead` `value`
   team2 = e.target.value; // `$(e.target).typeahead("val")
   console.log(team2)
@@ -119,7 +119,7 @@ var config_pie = {
     title: {
         display: true,
         text: match_title,
-        fontSize: 16
+        fontSize: 18
     },
     responsive: true,
     legend: {
@@ -218,10 +218,10 @@ var compare_line = new Chart(ctx2,{
     }
   ]},
   options: {
-     title: {
+    title: {
     display: true,
     text: "Ranking Comparion past 5 years",
-    fontSize: 16
+    fontSize: 18
   },
   scales: {
     yAxes: [{
@@ -233,6 +233,10 @@ var compare_line = new Chart(ctx2,{
 legend: {
   display:false,
   position: 'bottom'
+}, 
+font: {
+  weight: '300',
+  size: '18'
 }
   }
   

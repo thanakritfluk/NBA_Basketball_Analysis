@@ -87,7 +87,7 @@ $(".teamInput").typeahead({
   name: 'nba_team',
   source: substringMatcher(nba_team)
 
-}).on("change", function(e) {
+}).on("typeahead:selected", function(e) {
 // do stuff with current `typeahead` `value`
 val = e.target.value; // `$(e.target).typeahead("val")
 // console.log(val)
