@@ -53,12 +53,28 @@ var nba_team = ['Atlanta Hawks',
 
 ];
 
-$('.team_search').typeahead({
-        hint: true,
-        highlight: true,
-        minLength: 1
-    },
-    {
-        name: 'nba_team',
-        source: substringMatcher(nba_team)
-    });
+// $('.teamInput').typeahead({
+//         hint: true,
+//         highlight: true,
+//         minLength: 1
+//     },
+//     {
+//         name: 'nba_team',
+//         source: substringMatcher(nba_team)
+//     });
+
+// $(".teamInput").typeahead({
+//     hint: true,
+//     highlight: true,
+//     minLength: 1
+// },
+// {
+//     name: 'nba_team',
+//     source: substringMatcher(nba_team)
+
+// }).on("input", function(e) {
+//   // do stuff with current `typeahead` `value`
+//   var myVal = e.target.value; // `$(e.target).typeahead("val")
+//   console.log(myVal)
+// });
+

@@ -10,7 +10,7 @@
     margin-top: 1rem;
 }
 
-.team_search {
+.teamInput {
     background-color: white(248, 191, 168);
     border: 0.2rem solid lightgray;
     border-radius: 1rem;
@@ -18,6 +18,15 @@
     width: 20rem;
     padding-left: 1rem;
 
+}
+
+#search_submit {
+    margin-top: 1rem;
+    margin-left: 1.5rem;
+}
+
+#search_submit:hover {
+    opacity: 0.8;
 }
 
 #myChart {
