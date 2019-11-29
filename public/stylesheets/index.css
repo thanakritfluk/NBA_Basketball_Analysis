@@ -8,6 +8,20 @@
   margin-top: 10px;  
 }
 
+.serch-row {
+  display: table;
+  
+  table-layout: fixed; 
+  border-spacing: 10px;  
+  top: 20px;  
+  margin-top: 10px;  
+}
+
+.search-col {
+  display: table-cell;
+  text-align: center;
+}
+
 .index-column{
   display: table-cell;
   text-align: center;
@@ -55,4 +69,8 @@
 
 .dash-button {
   width: 100%;
+}
+
+.img-topten {
+  width: 600px;
 }

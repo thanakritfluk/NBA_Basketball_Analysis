@@ -1,0 +1,67 @@
+<%- include script_link %>
+
+<div>Eastern Conference</div>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">Rank</th>
+            <th scope="col">Team</th>
+            <th scope="col">W</th>
+            <th scope="col">L</th>
+            <th scope="col">PCT</th>
+            <th scope="col">CGB</th>
+            <th scope="col">Home</th>
+            <th scope="col">DIV</th>
+            <th scope="col">CONF</th>
+            <th scope="col">L10</th>
+            <th scope="col">PF</th>
+            <th scope="col"> PA</th>
+            <th scope="col">DIFF</th>
+            <th scope="col">STRK</th>
+            
+        </tr>
+    </thead>
+    
+        <% for(var i=0; i < data.length; i++) { %>
+            <%if (data[i].conference == 'Eastern') { %>
+                <tr>
+                    <td><%= data[i].id %></td>
+                    <td><%= data[i].team_name %></td>
+                </tr>
+            <% } %>            
+        <% } %>            
+</table>
+
+<div>Western Conference</div>
+<table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">Rank</th>
+                <th scope="col">Team</th>
+                <th scope="col">W</th>
+                <th scope="col">L</th>
+                <th scope="col">PCT</th>
+                <th scope="col">CGB</th>
+                <th scope="col">Home</th>
+                <th scope="col">DIV</th>
+                <th scope="col">CONF</th>
+                <th scope="col">L10</th>
+                <th scope="col">PF</th>
+                <th scope="col"> PA</th>
+                <th scope="col">DIFF</th>
+                <th scope="col">STRK</th>
+                
+            </tr>
+        </thead>
+        
+            <% for(var i=0; i < data.length; i++) { %>
+                <%if (data[i].conference == 'Western') { %>
+                    <tr>
+                        <td><%= data[i].id %></td>
+                        <td><%= data[i].team_name %></td>
+                    </tr>
+                <% } %>            
+            <% } %>            
+    </table>
+
+

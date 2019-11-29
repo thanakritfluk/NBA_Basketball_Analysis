@@ -3,9 +3,12 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-    res.render('index', {
-        title: 'Don'
+    res.render('topten_league', {
+        title: 'DAQ Basketball prediction'
     });
 });
-
 module.exports = router;
+
+
+
+
