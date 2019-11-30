@@ -1,14 +1,34 @@
 <!DOCTYPE html>
 <html>
-
     <head>
         <title><%= title %></title>
     </head>
-
-<body>
-<%- include navbar %>
-<h1><%= title %></h1>
-<p>Welcome to <%= title %></p>
-</body>
-
+    <body>
+        <%- include navbar %>        
+        <div class="container">            
+            <div class="title-dashboard">
+                <img src="/images/topten-logo.png" class="img-topten">
+            </div>
+            <div class="serch-row">
+                <div class="search-col">
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <label class="btn btn-secondary active"  id="conference-button">
+                            <input type="radio" name="options" checked> 
+                            Conference
+                        </label>
+                        <label class="btn btn-secondary" id="league-button">
+                            <input type="radio" name="options"> 
+                            League
+                        </label>
+                    </div>
+                </div>
+                
+            </div>
+            <div id="topten-table">
+                <div class="conf-table"><%- include topten_conference %></div>
+                <div class="league-table d-none"><%- include topten_league %></div>
+            </div>            
+        </div>        
+        <script src="/javascripts/main.js"></script>             
+    </body>
 </html>
