@@ -8,7 +8,7 @@ const current_year =  parseInt(new Date().getFullYear());
 var getDashboard = function () {
     var promise = new Promise(function (resolve, reject) {
       var jsonStr;
-      db.query(`SELECT * FROM standing`,function(err, result){
+      db.query(`SELECT * FROM standing ORDER BY year DESC, pct_score DESC;`,function(err, result){
         if(err) {
           reject(err);
         } else {

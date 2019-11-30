@@ -1,11 +1,55 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
+const db = require('./public/javascripts/db');
 var url = 'https://sports.yahoo.com/nba/standings/?season=';
 var scraper = require('table-scraper');
 var current_year = new Date().getFullYear();
 var westData = [];
 var eastData = [];
 var max_year = 6;
+
+function deleteData() {
+    const sql = `DELETE FROM standing;`;
+    db.query(
+        sql,
+        (err, res) => {
+          console.log(err, res);
+          db.end();
+        }
+    ).catch(err => console.log(err));
+}
+
+
+function insertData(params){
+    const sql = `INSERT INTO standing (
+        rank,
+        team_name,            
+        conference,
+        year,
+        w_score,
+        l_score,
+        pct_score,
+        cgb_score,
+        home_score,        
+        div_score,        
+        conf_score,        
+        l10_score,        
+        pf_score,
+        pa_score,
+        diff_score,
+        strk_score)
+        VALUES (
+            $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16);        
+    `
+    db.query(
+        sql, params,
+        (err, res) => {
+          console.log(err, res);
+        //   db.end();
+        }
+    ).catch(err => console.log(err));
+}
+
 
 async function getStandingData(url, year) {
     var eastHead;
@@ -29,7 +73,7 @@ async function getStandingData(url, year) {
 
     for (var i = 0; i < westTable.length; i++) {
         list_west_name.push(westTable[i].children[1].data);
-        if (i == eastTable.length - 1) {
+        if (i == westTable.length - 1) {
             westHead = westTable[i].children[1].data
         }
     }
@@ -40,7 +84,8 @@ async function getStandingData(url, year) {
 
         var east_data = {
             Team_name: list_east_name[i],
-            Rank: i + 1,
+            Conference: 'Eastern',
+            Rank: i + 1,            
             W: tableData[1][i][eastHead],
             L: tableData[1][i]['W'],
             Pct: tableData[1][i]['L'],
@@ -55,11 +100,33 @@ async function getStandingData(url, year) {
             Streak: tableData[1][i]['Diff'],
             Year: year
         }
-        eastData.push(east_data);
-        //        console.log(eastData)
+        eastData.push(east_data);        
+
+        const params_east = [
+            east_data.Rank,            
+            east_data.Team_name,
+            east_data.Conference,
+            east_data.Year,
+            east_data.W,
+            east_data.L,
+            east_data.Pct,
+            east_data.CGB,
+            east_data.Home,
+            east_data.Div,
+            east_data.Conf,
+            east_data.Last10,
+            east_data.PF,
+            east_data.PA,
+            east_data.Diff,
+            east_data.Streak
+        ]        
+
+        insertData(params_east);
+        
 
         var west_data = {
             Team_name: list_west_name[i],
+            Conference: 'Western',
             Rank: i + 1,
             W: tableData[2][i][westHead],
             L: tableData[2][i]['W'],
@@ -76,8 +143,27 @@ async function getStandingData(url, year) {
             Year: year
         }
         westData.push(west_data);
-        //        console.log(westData);
 
+        const params_west = [
+            west_data.Rank,            
+            west_data.Team_name,
+            west_data.Conference,
+            west_data.Year,
+            west_data.W,
+            west_data.L,
+            west_data.Pct,
+            west_data.CGB,
+            west_data.Home,
+            west_data.Div,
+            west_data.Conf,
+            west_data.Last10,
+            west_data.PF,
+            west_data.PA,
+            west_data.Diff,
+            west_data.Streak
+        ]        
+
+        insertData(params_west);   
     }
 
     return [eastData, westData]
@@ -101,13 +187,22 @@ async function get_All_Standing() {
 
 
 async function loop_all() {
-    let all_data = await get_All_Standing();
+    // deleteData();
+    let all_data = await get_All_Standing();    
     // [0] 2019 [0] East side
-    var test = all_data[0][0].map(function (e) {
+    var test = all_data[0][0].map(function (e) {            
         return e
     });
-    // test[0] First json {} 
-    console.log(test[0]);
+
+    var test1 = all_data[0][1].map(function (e) {
+        return e
+    })
+    
+    // test[0] First json {}     
+    await getStandingData.insert
+    console.log(test);
+
+    console.log(test1);   
 
 }
 //console_print();
