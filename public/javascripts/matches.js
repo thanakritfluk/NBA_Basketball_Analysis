@@ -21,37 +21,36 @@ var substringMatcher = function (strs) {
 };
 
 //mock teamname
-var nba_team = ['Atlanta Hawks',
-  'Boston Celtics',
-  'Brooklyn Nets',
-  'Charlotte Hornets',
-  'Chicago Bulls',
-  'Cleveland Cavaliers',
-  'Dallas Mavericks',
-  'Denver Nuggets',
-  'Detroit Pistons',
-  'Golden State Warriors',
-  'Houston Rockets',
-  'Indiana Pacers',
+var nba_team = ['Atlanta',
+  'Boston',
+  'Brooklyn',
+  'Charlotte',
+  'Chicago',
+  'Cleveland',
+  'Dallas',
+  'Denver',
+  'Detroit',
+  'Golden State',
+  'Houston',
+  'Indiana',
   'LA Clippers',
-  'Los Angeles Lakers',
-  'Memphis Grizzlies',
-  'Miami Heat',
-  'Milwaukee Bucks',
-  'Minnesota Timberwolves',
-  'New Orleans Pelicans',
-  'New York Knicks',
-  'Oklahoma City Thunder',
-  'Orlando Magic',
-  'Philadelphia 76ers',
-  'Phoenix Suns',
-  'Portland Trail Blazers',
-  'Sacramento Kings',
-  'San Antonio Spurs',
-  'Toronto Raptors',
-  'Utah Jazz',
-  'Washington Wizards'
-
+  'LA Lakers',
+  'Memphis',
+  'Miami',
+  'Milwaukee',
+  'Minnesota',
+  'New Orleans',
+  'New York',
+  'Oklahoma City',
+  'Orlando',
+  'Philadelphia',
+  'Phoenix',
+  'Portland',
+  'Sacramento',
+  'San Antonio',
+  'Toronto',
+  'Utah',
+  'Washington'
 ];
 
 
@@ -99,6 +98,8 @@ var jsonfile2 = {
     "teamB" : 80
   }]
 };
+
+
 
 var pie_data1 = '';
 var pie_data2 = '';
@@ -178,6 +179,7 @@ var jsonfile = {
 ]
 };
 
+
 var line1_data = [];
 var line2_data = [];
 
@@ -245,13 +247,15 @@ font: {
 //when click compare
 $('#compare_submit').click(function() {
   labels = [team1,team2]
-  pie_data1 = jsonfile2.winningarray.map(function(e) {
-    return e.teamA
-  });;
-  pie_data2 =  jsonfile2.winningarray.map(function(e) {
-    return e.teamB
-  });;
-  match_chart.data.datasets[0].data = [pie_data1,pie_data2]
+  // pie_data1 = jsonfile2.winningarray.map(function(e) {
+  //   return e.teamA
+  // });;
+  // pie_data2 =  jsonfile2.winningarray.map(function(e) {
+  //   return e.teamB
+  // });;
+  match_chart.data.datasets[0].data = [pie_data1,pie_data2];
+
+  // match_chart.data.datasets[0].data = compute_winrate();
   match_chart.data.labels = labels;
   match_title = team1 + " VS " + team2 + " winning rate";
   match_chart.options.title.text = match_title;
@@ -273,5 +277,28 @@ $('#compare_submit').click(function() {
 
 });
 
+// compute winrate e.g. w1: array of w point of team A 
+function compute_winrate (w1,w2) {
+  var sum1,sum2,percent1,percent2,percent_diff;
+  for (var i = 0 ; i < 5; i++) {
+    sum1 += w1[i];
+    sum2 += w2[i];
+  }
+
+  percent1 = 100*sum1/410;
+  percent2 = 100*sum2/410;
+
+  percent_diff = percent1-percent2;
+  if (percent_diff > 0) {
+    pie_data1 = percent1 + percent_diff;
+    pie_data2 = percent2 - percent_diff;
+  } else {
+    pie_data1 = percent1 - percent_diff;
+    pie_data2 = percent2 + percent_diff;
+  }
+
+  return [pie_data1,pie_data2];
+
+}
 
 
