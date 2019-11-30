@@ -7,30 +7,41 @@
 /*    color: #00B7FF;*/
 /*}*/
 
-#myChart {
+#match_chart {
     width: 200px;
     height: 500px;
-    margin: 0 auto;
+    margin-top: 2rem;
+    background: whitesmoke;
+    margin-bottom: 2rem;
+}
+
+#compare_line {
+    margin-top: 2rem;
+    background: whitesmoke;
+    margin-bottom: 2rem;
 }
 
 .chart-wrapper {
-    width: 500px;
-    height: 500px;
+    width: 50rem;
+    height: auto;
     margin: 0 auto;
 }
 
 .match_body {
-    font-family: 'Alfa Slab One', cursive;
+    /* font-family: 'Alfa Slab One', cursive; */
     text-align: center;
     /*background-color: #153b56;*/
 }
 
 .match_title {
-    margin: 40px auto;
+    margin: 2.5rem;
+    font-weight: 400;
 }
 
 .input{
-    margin-left: 297px;
+    margin: auto;
+    height: 7rem;
+    text-align: center;
 }
 
 .team_input {
@@ -38,14 +49,23 @@
     margin: 40px 20px;
 }
 
-.match_input {
+
+
+/* .match_input {
     width: 200px;
     height: 45px;
     /*background-color: #3CBC8D;*/
-}
+/* } */
 
 .vs {
     font-size: 20px;
-    margin-top: 60px;
+    margin-top: 3rem;
 }
 
+#compare_submit {
+
+}
+
+#compare_submit:hover {
+    opacity: 0.8;
+}
