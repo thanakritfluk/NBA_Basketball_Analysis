@@ -13,8 +13,7 @@ function deleteData() {
     db.query(
         sql,
         (err, res) => {
-          console.log(err, res);
-          db.end();
+          console.log(err, res);          
         }
     ).catch(err => console.log(err));
 }
@@ -187,7 +186,7 @@ async function get_All_Standing() {
 
 
 async function loop_all() {
-    // deleteData();
+    deleteData();
     let all_data = await get_All_Standing();    
     // [0] 2019 [0] East side
     var test = all_data[0][0].map(function (e) {            
