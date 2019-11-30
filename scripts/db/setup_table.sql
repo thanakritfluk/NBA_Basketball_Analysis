@@ -12,8 +12,8 @@ CREATE TABLE IF NOT EXISTS standing (
   cgb_score FLOAT,
   home_win_score INT,
 	home_loss_score INT,
-  div_win_score INT,
-	div_loss_score INT,
+  div_win_score INT, 1  1-2
+	div_loss_score INT,2
   conf_win_score INT,
 	conf_loss_score INT,
   l10_win_score INT,

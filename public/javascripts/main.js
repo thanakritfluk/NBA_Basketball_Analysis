@@ -1,17 +1,16 @@
-
-$('#league-button').click(function(){       
-  $('#topten-table').load('topten_league');    
+$("#conference-button").click(function (e) {
+  $(".league-table").addClass("d-none").siblings().removeClass("d-none");
 });
 
-$('#conference-button').click(function(){       
-  $('#topten-table').load('topten_conference');    
+$("#league-button").click(function (e) {
+  $(".conf-table").addClass("d-none").siblings().removeClass("d-none");  
 });
 
-$(document).ready(function (){
-  $('#dropdown-click').click(function () {
-     $('.dropdown-menu').toggle();
-  });
-  $(document).mousedown(function(){
-    $('.dropdown-menu').hide();
-  })
+$('#dropdown-click').change(function () {
+  $('.dropdown-item').hide()
 });
+
+$(".dropdown-item").click(function() {
+  $('#dropdown-click').text($(this).text()); // or alert($(this).attr('id'));  
+});
+

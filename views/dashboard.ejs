@@ -22,23 +22,13 @@
                         </label>
                     </div>
                 </div>
-                <div class="search-col">
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdown-click" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                           Year
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                            <% for(var i = current_year; i > current_year-5; i--) {  %>                               
-                                <button class="dropdown-item" type="button" ><%= i %> - <%= i+1 %></button>
-                            <% } %>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
             <div id="topten-table">
-                <%- include topten_conference %>
+                <div class="conf-table"><%- include topten_conference %></div>
+                <div class="league-table d-none"><%- include topten_league %></div>
             </div>            
         </div>        
-        <script src="/javascripts/main.js"></script>
+        <script src="/javascripts/main.js"></script>             
     </body>
 </html>

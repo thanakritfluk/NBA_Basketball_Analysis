@@ -1,6 +1,7 @@
 <%- include script_link %>
 
-<div>Eastern Conference</div>
+<div class="condition-year" id="s<%= current_year %>"><td><%= current_year %></td></div>
+<div class="topic-filter">Eastern Conference</div>
 <table class="table table-bordered">
     <thead>
         <tr>
@@ -21,47 +22,456 @@
             
         </tr>
     </thead>
-    
+    <tbody>    
+        <% var count=1; %>    
         <% for(var i=0; i < data.length; i++) { %>
-            <%if (data[i].conference == 'Eastern') { %>
+            <%if (data[i].conference == 'Eastern' && data[i].year == current_year) { %>                
                 <tr>
-                    <td><%= data[i].id %></td>
+                    <td><%= count %></td>
                     <td><%= data[i].team_name %></td>
+                    <td><%= data[i].w_score %></td>
+                    <td><%= data[i].l_score %></td>
+                    <td><%= data[i].pct_score %></td>
+                    <td><%= data[i].cgb_score %></td>
+                    <td><%= data[i].home_win_score - data[i].home_loss_score%></td>
+                    <td><%= data[i].div_win_score - data[i].div_loss_score%></td>
+                    <td><%= data[i].conf_win_score - data[i].conf_loss_score%></td>
+                    <td><%= data[i].l10_win_score - data[i].l10_loss_score%></td>
+                    <td><%= data[i].pf_score %></td>
+                    <td><%= data[i].pa_score %></td>
+                    <td><%= data[i].diff_score %></td>
+                    <td><%= data[i].strk_score %></td>
                 </tr>
+                <% count++ %>
             <% } %>            
-        <% } %>            
+        <% } %>   
+    </tbody>         
 </table>
 
-<div>Western Conference</div>
+<div class="topic-filter">Western Conference</div>
 <table class="table table-bordered">
-        <thead>
+    <thead>
+        <tr>
+            <th scope="col">Rank</th>
+            <th scope="col">Team</th>
+            <th scope="col">W</th>
+            <th scope="col">L</th>
+            <th scope="col">PCT</th>
+            <th scope="col">CGB</th>
+            <th scope="col">Home</th>
+            <th scope="col">DIV</th>
+            <th scope="col">CONF</th>
+            <th scope="col">L10</th>
+            <th scope="col">PF</th>
+            <th scope="col"> PA</th>
+            <th scope="col">DIFF</th>
+            <th scope="col">STRK</th>
+            
+        </tr>
+    </thead>
+    <% var count=1; %>
+    <% for(var i=0; i < data.length; i++) { %>
+        <%if (data[i].conference == 'Western'  && data[i].year == current_year) { %>                    
             <tr>
-                <th scope="col">Rank</th>
-                <th scope="col">Team</th>
-                <th scope="col">W</th>
-                <th scope="col">L</th>
-                <th scope="col">PCT</th>
-                <th scope="col">CGB</th>
-                <th scope="col">Home</th>
-                <th scope="col">DIV</th>
-                <th scope="col">CONF</th>
-                <th scope="col">L10</th>
-                <th scope="col">PF</th>
-                <th scope="col"> PA</th>
-                <th scope="col">DIFF</th>
-                <th scope="col">STRK</th>
-                
+                <td><%= count %></td>
+                <td><%= data[i].team_name %></td>
+                <td><%= data[i].w_score %></td>
+                <td><%= data[i].l_score %></td>
+                <td><%= data[i].pct_score %></td>
+                <td><%= data[i].cgb_score %></td>
+                <td><%= data[i].home_win_score - data[i].home_loss_score%></td>
+                <td><%= data[i].div_win_score - data[i].div_loss_score%></td>
+                <td><%= data[i].conf_win_score - data[i].conf_loss_score%></td>
+                <td><%= data[i].l10_win_score - data[i].l10_loss_score%></td>
+                <td><%= data[i].pf_score %></td>
+                <td><%= data[i].pa_score %></td>
+                <td><%= data[i].diff_score %></td>
+                <td><%= data[i].strk_score %></td>
             </tr>
-        </thead>
-        
-            <% for(var i=0; i < data.length; i++) { %>
-                <%if (data[i].conference == 'Western') { %>
-                    <tr>
-                        <td><%= data[i].id %></td>
-                        <td><%= data[i].team_name %></td>
-                    </tr>
-                <% } %>            
-            <% } %>            
-    </table>
+            <% count++ %>
+        <% } %>            
+    <% } %>            
+</table>
 
+<hr>
+
+<div class="condition-year" id="s<%= current_year-1 %>"><td><%= current_year-1 %></td></div>
+<div class="topic-filter">Eastern Conference</div>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">Rank</th>
+            <th scope="col">Team</th>
+            <th scope="col">W</th>
+            <th scope="col">L</th>
+            <th scope="col">PCT</th>
+            <th scope="col">CGB</th>
+            <th scope="col">Home</th>
+            <th scope="col">DIV</th>
+            <th scope="col">CONF</th>
+            <th scope="col">L10</th>
+            <th scope="col">PF</th>
+            <th scope="col"> PA</th>
+            <th scope="col">DIFF</th>
+            <th scope="col">STRK</th>
+            
+        </tr>
+    </thead>
+    <tbody>    
+        <% var count=1; %>    
+        <% for(var i=0; i < data.length; i++) { %>
+            <%if (data[i].conference == 'Eastern' && data[i].year == current_year-1) { %>                
+                <tr>
+                    <td><%= count %></td>
+                    <td><%= data[i].team_name %></td>
+                    <td><%= data[i].w_score %></td>
+                    <td><%= data[i].l_score %></td>
+                    <td><%= data[i].pct_score %></td>
+                    <td><%= data[i].cgb_score %></td>
+                    <td><%= data[i].home_win_score - data[i].home_loss_score%></td>
+                    <td><%= data[i].div_win_score - data[i].div_loss_score%></td>
+                    <td><%= data[i].conf_win_score - data[i].conf_loss_score%></td>
+                    <td><%= data[i].l10_win_score - data[i].l10_loss_score%></td>
+                    <td><%= data[i].pf_score %></td>
+                    <td><%= data[i].pa_score %></td>
+                    <td><%= data[i].diff_score %></td>
+                    <td><%= data[i].strk_score %></td>
+                </tr>
+                <% count++ %>
+            <% } %>            
+        <% } %>   
+    </tbody>         
+</table>
+
+<div class="topic-filter">Western Conference</div>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">Rank</th>
+            <th scope="col">Team</th>
+            <th scope="col">W</th>
+            <th scope="col">L</th>
+            <th scope="col">PCT</th>
+            <th scope="col">CGB</th>
+            <th scope="col">Home</th>
+            <th scope="col">DIV</th>
+            <th scope="col">CONF</th>
+            <th scope="col">L10</th>
+            <th scope="col">PF</th>
+            <th scope="col"> PA</th>
+            <th scope="col">DIFF</th>
+            <th scope="col">STRK</th>
+            
+        </tr>
+    </thead>
+    <% var count=1; %>
+    <% for(var i=0; i < data.length; i++) { %>
+        <%if (data[i].conference == 'Western'  && data[i].year == current_year-1) { %>                    
+            <tr>
+                <td><%= count %></td>
+                <td><%= data[i].team_name %></td>
+                <td><%= data[i].w_score %></td>
+                <td><%= data[i].l_score %></td>
+                <td><%= data[i].pct_score %></td>
+                <td><%= data[i].cgb_score %></td>
+                <td><%= data[i].home_win_score - data[i].home_loss_score%></td>
+                <td><%= data[i].div_win_score - data[i].div_loss_score%></td>
+                <td><%= data[i].conf_win_score - data[i].conf_loss_score%></td>
+                <td><%= data[i].l10_win_score - data[i].l10_loss_score%></td>
+                <td><%= data[i].pf_score %></td>
+                <td><%= data[i].pa_score %></td>
+                <td><%= data[i].diff_score %></td>
+                <td><%= data[i].strk_score %></td>
+            </tr>
+            <% count++ %>
+        <% } %>            
+    <% } %>            
+</table>
+
+<hr>
+
+<div class="condition-year" id="s<%= current_year-2 %>"><td><%= current_year-2 %></td></div>
+<div class="topic-filter">Eastern Conference</div>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">Rank</th>
+            <th scope="col">Team</th>
+            <th scope="col">W</th>
+            <th scope="col">L</th>
+            <th scope="col">PCT</th>
+            <th scope="col">CGB</th>
+            <th scope="col">Home</th>
+            <th scope="col">DIV</th>
+            <th scope="col">CONF</th>
+            <th scope="col">L10</th>
+            <th scope="col">PF</th>
+            <th scope="col"> PA</th>
+            <th scope="col">DIFF</th>
+            <th scope="col">STRK</th>
+            
+        </tr>
+    </thead>
+    <tbody>    
+        <% var count=1; %>    
+        <% for(var i=0; i < data.length; i++) { %>
+            <%if (data[i].conference == 'Eastern' && data[i].year == current_year-2) { %>                
+                <tr>
+                    <td><%= count %></td>
+                    <td><%= data[i].team_name %></td>
+                    <td><%= data[i].w_score %></td>
+                    <td><%= data[i].l_score %></td>
+                    <td><%= data[i].pct_score %></td>
+                    <td><%= data[i].cgb_score %></td>
+                    <td><%= data[i].home_win_score - data[i].home_loss_score%></td>
+                    <td><%= data[i].div_win_score - data[i].div_loss_score%></td>
+                    <td><%= data[i].conf_win_score - data[i].conf_loss_score%></td>
+                    <td><%= data[i].l10_win_score - data[i].l10_loss_score%></td>
+                    <td><%= data[i].pf_score %></td>
+                    <td><%= data[i].pa_score %></td>
+                    <td><%= data[i].diff_score %></td>
+                    <td><%= data[i].strk_score %></td>
+                </tr>
+                <% count++ %>
+            <% } %>            
+        <% } %>   
+    </tbody>         
+</table>
+
+<div class="topic-filter">Western Conference</div>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">Rank</th>
+            <th scope="col">Team</th>
+            <th scope="col">W</th>
+            <th scope="col">L</th>
+            <th scope="col">PCT</th>
+            <th scope="col">CGB</th>
+            <th scope="col">Home</th>
+            <th scope="col">DIV</th>
+            <th scope="col">CONF</th>
+            <th scope="col">L10</th>
+            <th scope="col">PF</th>
+            <th scope="col"> PA</th>
+            <th scope="col">DIFF</th>
+            <th scope="col">STRK</th>
+            
+        </tr>
+    </thead>
+    <% var count=1; %>
+    <% for(var i=0; i < data.length; i++) { %>
+        <%if (data[i].conference == 'Western'  && data[i].year == current_year-2) { %>                    
+            <tr>
+                <td><%= count %></td>
+                <td><%= data[i].team_name %></td>
+                <td><%= data[i].w_score %></td>
+                <td><%= data[i].l_score %></td>
+                <td><%= data[i].pct_score %></td>
+                <td><%= data[i].cgb_score %></td>
+                <td><%= data[i].home_win_score - data[i].home_loss_score%></td>
+                <td><%= data[i].div_win_score - data[i].div_loss_score%></td>
+                <td><%= data[i].conf_win_score - data[i].conf_loss_score%></td>
+                <td><%= data[i].l10_win_score - data[i].l10_loss_score%></td>
+                <td><%= data[i].pf_score %></td>
+                <td><%= data[i].pa_score %></td>
+                <td><%= data[i].diff_score %></td>
+                <td><%= data[i].strk_score %></td>
+            </tr>
+            <% count++ %>
+        <% } %>            
+    <% } %>            
+</table>
+
+<hr>
+
+<div class="condition-year" id="s<%= current_year-3 %>"><td><%= current_year-3 %></td></div>
+<div class="topic-filter">Eastern Conference</div>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">Rank</th>
+            <th scope="col">Team</th>
+            <th scope="col">W</th>
+            <th scope="col">L</th>
+            <th scope="col">PCT</th>
+            <th scope="col">CGB</th>
+            <th scope="col">Home</th>
+            <th scope="col">DIV</th>
+            <th scope="col">CONF</th>
+            <th scope="col">L10</th>
+            <th scope="col">PF</th>
+            <th scope="col"> PA</th>
+            <th scope="col">DIFF</th>
+            <th scope="col">STRK</th>
+            
+        </tr>
+    </thead>
+    <tbody>    
+        <% var count=1; %>    
+        <% for(var i=0; i < data.length; i++) { %>
+            <%if (data[i].conference == 'Eastern' && data[i].year == current_year-3) { %>                
+                <tr>
+                    <td><%= count %></td>
+                    <td><%= data[i].team_name %></td>
+                    <td><%= data[i].w_score %></td>
+                    <td><%= data[i].l_score %></td>
+                    <td><%= data[i].pct_score %></td>
+                    <td><%= data[i].cgb_score %></td>
+                    <td><%= data[i].home_win_score - data[i].home_loss_score%></td>
+                    <td><%= data[i].div_win_score - data[i].div_loss_score%></td>
+                    <td><%= data[i].conf_win_score - data[i].conf_loss_score%></td>
+                    <td><%= data[i].l10_win_score - data[i].l10_loss_score%></td>
+                    <td><%= data[i].pf_score %></td>
+                    <td><%= data[i].pa_score %></td>
+                    <td><%= data[i].diff_score %></td>
+                    <td><%= data[i].strk_score %></td>
+                </tr>
+                <% count++ %>
+            <% } %>            
+        <% } %>   
+    </tbody>         
+</table>
+
+<div class="topic-filter">Western Conference</div>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">Rank</th>
+            <th scope="col">Team</th>
+            <th scope="col">W</th>
+            <th scope="col">L</th>
+            <th scope="col">PCT</th>
+            <th scope="col">CGB</th>
+            <th scope="col">Home</th>
+            <th scope="col">DIV</th>
+            <th scope="col">CONF</th>
+            <th scope="col">L10</th>
+            <th scope="col">PF</th>
+            <th scope="col"> PA</th>
+            <th scope="col">DIFF</th>
+            <th scope="col">STRK</th>
+            
+        </tr>
+    </thead>
+    <% var count=1; %>
+    <% for(var i=0; i < data.length; i++) { %>
+        <%if (data[i].conference == 'Western'  && data[i].year == current_year-3) { %>                    
+            <tr>
+                <td><%= count %></td>
+                <td><%= data[i].team_name %></td>
+                <td><%= data[i].w_score %></td>
+                <td><%= data[i].l_score %></td>
+                <td><%= data[i].pct_score %></td>
+                <td><%= data[i].cgb_score %></td>
+                <td><%= data[i].home_win_score - data[i].home_loss_score%></td>
+                <td><%= data[i].div_win_score - data[i].div_loss_score%></td>
+                <td><%= data[i].conf_win_score - data[i].conf_loss_score%></td>
+                <td><%= data[i].l10_win_score - data[i].l10_loss_score%></td>
+                <td><%= data[i].pf_score %></td>
+                <td><%= data[i].pa_score %></td>
+                <td><%= data[i].diff_score %></td>
+                <td><%= data[i].strk_score %></td>
+            </tr>
+            <% count++ %>
+        <% } %>            
+    <% } %>            
+</table>
+
+<hr>
+
+<div class="condition-year" id="s<%= current_year-4 %>"><td><%= current_year-4 %></td></div>
+<div class="topic-filter">Eastern Conference</div>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">Rank</th>
+            <th scope="col">Team</th>
+            <th scope="col">W</th>
+            <th scope="col">L</th>
+            <th scope="col">PCT</th>
+            <th scope="col">CGB</th>
+            <th scope="col">Home</th>
+            <th scope="col">DIV</th>
+            <th scope="col">CONF</th>
+            <th scope="col">L10</th>
+            <th scope="col">PF</th>
+            <th scope="col"> PA</th>
+            <th scope="col">DIFF</th>
+            <th scope="col">STRK</th>
+            
+        </tr>
+    </thead>
+    <tbody>    
+        <% var count=1; %>    
+        <% for(var i=0; i < data.length; i++) { %>
+            <%if (data[i].conference == 'Eastern' && data[i].year == current_year-4) { %>                
+                <tr>
+                    <td><%= count %></td>
+                    <td><%= data[i].team_name %></td>
+                    <td><%= data[i].w_score %></td>
+                    <td><%= data[i].l_score %></td>
+                    <td><%= data[i].pct_score %></td>
+                    <td><%= data[i].cgb_score %></td>
+                    <td><%= data[i].home_win_score - data[i].home_loss_score%></td>
+                    <td><%= data[i].div_win_score - data[i].div_loss_score%></td>
+                    <td><%= data[i].conf_win_score - data[i].conf_loss_score%></td>
+                    <td><%= data[i].l10_win_score - data[i].l10_loss_score%></td>
+                    <td><%= data[i].pf_score %></td>
+                    <td><%= data[i].pa_score %></td>
+                    <td><%= data[i].diff_score %></td>
+                    <td><%= data[i].strk_score %></td>
+                </tr>
+                <% count++ %>
+            <% } %>            
+        <% } %>   
+    </tbody>         
+</table>
+
+<div class="topic-filter">Western Conference</div>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">Rank</th>
+            <th scope="col">Team</th>
+            <th scope="col">W</th>
+            <th scope="col">L</th>
+            <th scope="col">PCT</th>
+            <th scope="col">CGB</th>
+            <th scope="col">Home</th>
+            <th scope="col">DIV</th>
+            <th scope="col">CONF</th>
+            <th scope="col">L10</th>
+            <th scope="col">PF</th>
+            <th scope="col"> PA</th>
+            <th scope="col">DIFF</th>
+            <th scope="col">STRK</th>
+            
+        </tr>
+    </thead>
+    <% var count=1; %>
+    <% for(var i=0; i < data.length; i++) { %>
+        <%if (data[i].conference == 'Western'  && data[i].year == current_year-4) { %>                    
+            <tr>
+                <td><%= count %></td>
+                <td><%= data[i].team_name %></td>
+                <td><%= data[i].w_score %></td>
+                <td><%= data[i].l_score %></td>
+                <td><%= data[i].pct_score %></td>
+                <td><%= data[i].cgb_score %></td>
+                <td><%= data[i].home_win_score - data[i].home_loss_score%></td>
+                <td><%= data[i].div_win_score - data[i].div_loss_score%></td>
+                <td><%= data[i].conf_win_score - data[i].conf_loss_score%></td>
+                <td><%= data[i].l10_win_score - data[i].l10_loss_score%></td>
+                <td><%= data[i].pf_score %></td>
+                <td><%= data[i].pa_score %></td>
+                <td><%= data[i].diff_score %></td>
+                <td><%= data[i].strk_score %></td>
+            </tr>
+            <% count++ %>
+        <% } %>            
+    <% } %>            
+</table>
+
+<script src="/javascripts/main.js"></script>  
 

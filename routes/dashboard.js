@@ -5,7 +5,6 @@ var db = require('../public/javascripts/db');
 const current_year =  parseInt(new Date().getFullYear());
 
 /* GET home page. */
-
 var getDashboard = function () {
     var promise = new Promise(function (resolve, reject) {
       var jsonStr;
@@ -27,7 +26,7 @@ router.get('/', function(req, res, next) {
        res.render('dashboard',  { 
             data: result,
             title: 'DAQ Basketball prediction',
-            current_year: current_year,
+            current_year: current_year,            
         });
     })
 });
