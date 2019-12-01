@@ -284,11 +284,10 @@ function compute_winrate (w1,w2) {
     sum1 += w1[i];
     sum2 += w2[i];
   }
-
   percent1 = 100*sum1/410;
   percent2 = 100*sum2/410;
-
   percent_diff = percent1-percent2;
+
   if (percent_diff > 0) {
     pie_data1 = percent1 + percent_diff;
     pie_data2 = percent2 - percent_diff;
@@ -298,7 +297,6 @@ function compute_winrate (w1,w2) {
   }
 
   return [pie_data1,pie_data2];
-
 }
 
 
