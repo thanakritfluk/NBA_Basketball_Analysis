@@ -11,21 +11,26 @@
 <%- include navbar %>
 
 <div class="container">
-    <h1 class="match_title">Match compare</h1>
-
-    <div class="row input justify-content-center">
-        <div class="col-4-xs team_input">
-            <input class="teamInput team_input_one" type="text" placeholder="Team name">
-        </div>
-        <div class="col-4-xs">
-            <p class="vs">VS</p>
-        </div>
-        <div class="col-4-xs team_input">
-            <input class="teamInput team_input_two" type="text" placeholder="Team name">
-        </div>
+    <div class="title-match">
+        <img src="/images/match-logo.png" class="img-match">
     </div>
-    <div class="row justify-content-center">
-            <button type="submit" id="compare_submit" class="btn btn-dark">Compare</button>
+    <div class="compare-border">
+        <div class="row input justify-content-center compare-row">
+            <div class="col-4-xs team_input">
+                <input class="teamInput team_input_one" type="text" placeholder="Team name">
+            </div>
+
+            <div class="col-4-xs">
+                <p class="vs">VS</p>
+            </div>
+
+            <div class="col-4-xs team_input">
+                <input class="teamInput team_input_two" type="text" placeholder="Team name">
+            </div>
+        </div>
+        <div class="row justify-content-center">
+                <button type="submit" id="compare_submit" class="btn btn-dark compare-button">Compare</button>
+        </div>
     </div>
     <div class="chart-wrapper">
         <canvas id="match_chart"></canvas>
@@ -37,6 +42,10 @@
 
 <script src="/javascripts/typeahead.js"></script>
 <script src="/javascripts/matches.js"></script>
+<script>
+    team_name = '<%-team_name%>'
+    result = '<%-result%>'            
+</script>
 </body>
 
 </html>

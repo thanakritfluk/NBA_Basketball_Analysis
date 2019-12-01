@@ -1,11 +1,48 @@
-/*body {*/
-/*    !*  padding: 50px;*!*/
-/*    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;*/
-/*}*/
 
-/*a {*/
-/*    color: #00B7FF;*/
-/*}*/
+
+.compare-border {
+    border: 2px solid grey;
+    padding-bottom: 17px;
+
+}
+
+.tt-menu {
+    color: #222222 !important;
+    text-align: left;
+    border: 0.2px solid grey;
+    width: 320px;
+    background-color: white;
+    padding-left: 2px;
+}
+
+@media only screen and (max-width: 1100px) {
+    .compare-row {            
+        display: inline;        
+    }
+}
+
+.tt-selectable:hover {
+    background-color: rgba(133, 133, 133, 0.699);
+    color: #fafafa;
+
+}
+
+.compare-button {
+    background-color: #222222;
+    color: white;
+}
+
+.compare-button:hover {
+    color: #222222;
+    background-color: white;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+.img-match {
+    width: 600px;
+    height: auto;
+}
 
 #match_chart {
     width: 200px;

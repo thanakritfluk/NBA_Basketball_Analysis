@@ -10,7 +10,6 @@ $(document).ready(function(){
   $.each(names, function(i, el){
       if($.inArray(el, nba_team) === -1) nba_team.push(el);
   });
-  console.log(nba_team);  
 
   $(".teamInput").typeahead({
     hint: true,
@@ -24,7 +23,6 @@ $(document).ready(function(){
   }).on("typeahead:selected", function(e) {
   // do stuff with current `typeahead` `value`
   val = e.target.value; // `$(e.target).typeahead("val")
-  // console.log(val)
   });
 
   var d = new Date();
@@ -32,7 +30,6 @@ $(document).ready(function(){
   var labels = [n-4,n-3,n-2,n-1,n];
   var team_title = '';
 
-  // console.log(team_title);
   var data = '';
 
   var config = {
@@ -71,11 +68,6 @@ $(document).ready(function(){
 
   var ctx = document.getElementById('rank_chart').getContext('2d');
   rank_chart = new Chart(ctx, config);
-    
-  // if(typeof data === 'string'){
-  //   var team_data =  JSON.parse(data);  
-  // }
-  
   
 });
 
@@ -88,11 +80,9 @@ $( "#search_submit" ).click(function() {
   } else {
     team_data = result; 
   }
-  console.log('data=',team_data);
   var collect = {
     team_rank: []
   };  
-  console.log('l=',team_data.length);
   for(var i = 0; i < team_data.length; i++){
     var item = team_data[i];
     if(item.team_name == val){
@@ -102,8 +92,6 @@ $( "#search_submit" ).click(function() {
       })     
     }
   }
-  console.log(typeof team_data);
-  console.log('collect >> ', collect.team_rank);
 
   rank_chart.options.title.text = val;
   data = collect.team_rank.map(function(e) {
