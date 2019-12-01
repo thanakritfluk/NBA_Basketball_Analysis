@@ -6,7 +6,7 @@
     </head>
 
     <body>
-        <%- include navbar %>
+        <%- include navbar %>        
         <div class="container teamRankPage">
             <h2 id="teamrank_header">Team's name</h2>
             <div class="col-4-xs team_input">
@@ -14,19 +14,13 @@
                 <button type="submit" id="search_submit" class="btn btn-dark">Search</button>
             </div>
             <canvas id="rank_chart" width="400" height="180"></canvas>
-            <!-- <div class="dropdown">
-              <!-- <button class="btn btn-secondary dropdown-toggle teamname_dropdown" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Team's name
-              </button> -->
-              <!-- <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Action</a>
-              </div> -->
-              <!-- </div>  -->
-            </div>
-            <script src="/javascripts/typeahead.js"></script>
-            <script src="/javascripts/team_auto.js"></script>
-            <script src="/javascripts/teamline_chart.js"></script>
-   
-          </body>
+        </div>        
+        <script src="/javascripts/typeahead.js"></script>        
+        <script src="/javascripts/teamline_chart.js"></script>        
+        <script>
+            team_name = '<%-team_name%>'
+            result = '<%-result%>'            
+        </script>
+    </body>
 
 </html>
