@@ -47,24 +47,48 @@ $(document).ready(function(){
             borderColor: [
               'rgba(252, 126, 9,1)'
             ],
-            borderWidth: 0
+            pointBorderWidth: 12,
         }]
     },
     options: {
         title: {
           display: true,
           text: team_title,
-          fontSize: 16
+          fontSize: 26
         },
         scales: {
             yAxes: [{
                 ticks: {
-                    beginAtZero: true
+                    beginAtZero: true,
+                    fontSize: 16,
+                    suggestedMax: 16
                 }
+            }],
+            xAxes: [{
+              ticks: {
+                fontSize: 16
+              }
             }]
+        },
+        legend: {
+          labels: {
+              // This more specific font property overrides the global property
+              fontColor: 'grey',
+              fontSize: 16
+          }
+      },
+      plugins: {
+        datalabels: {
+          color: 'white',
+          font: {
+            weight: 'bold',
+            size: 16,
+          }
         }
-    }
-  };
+      }
+          
+          
+  }};
 
   var ctx = document.getElementById('rank_chart').getContext('2d');
   rank_chart = new Chart(ctx, config);
