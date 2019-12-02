@@ -165,7 +165,7 @@ var compare_line = new Chart(ctx2,{
   options: {
     title: {
     display: true,
-    text: "Ranking Comparion past 5 years",
+    text: "Ranking Comparison Past 5 years",
     fontSize: 18
   },
   scales: {
