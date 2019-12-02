@@ -6,6 +6,12 @@ Run this command on terminal
 ```
 ./scripts/setup_local_db.sh
 ```
+*if permission denied, you should run chmod before set up
+```
+ chmod +x ./scripts/setup_local_db.sh
+ ./scripts/setup_local_db.sh
+```
+
 
 ## Start server
 ```
