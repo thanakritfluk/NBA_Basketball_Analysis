@@ -1,8 +1,8 @@
 # NBA_Basketball_Analysis
 
-## Set up on mac
+## Set up database on mac
 
-Run command on terminal
+Run this command on terminal
 ```
 ./scripts/setup_local_db.sh
 ```
