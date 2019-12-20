@@ -67,3 +67,7 @@ nodemon server.js
 Open with <http://localhost:3000/>
 
 
+## API for data sharing
+ <http://localhost:3000/dashboard/score_data>
+
+
