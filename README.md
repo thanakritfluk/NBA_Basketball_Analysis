@@ -61,9 +61,15 @@ Run this command on terminal
 
 
 ## Run server
+
+```
+npm start
+```
+or
 ```
 nodemon server.js
 ```
+
 Open with <http://localhost:3000/>
 
 
