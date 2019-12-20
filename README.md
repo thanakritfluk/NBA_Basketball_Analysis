@@ -1,6 +1,6 @@
 # NBA_Basketball_Analysis
 ## Overview 
-    A web application that shows the statistics of the TOP10 Teams also can see the ranking of the basketball team in this league in the past 5 years in a visualization that you easy to understand! Moreover, the comparison between the 2 teams competing together is provided too you can easily see the percentage of their winning rate!
+   <p> A web application that shows the statistics of the TOP10 Teams also can see the ranking of the basketball team in this league in the past 5 years in a visualization that you easy to understand! Moreover, the comparison between the 2 teams competing together is provided too you can easily see the percentage of their winning rate! </p>
 ## Team member
 __Software and Knowledge Engineering, Kasetsart University__
 ___
@@ -19,7 +19,7 @@ Supaluk Jareonsuk|6010545935|
 ## For Window setup
 
 <!-- ``` -->
- > Make sure your have add the path to postgres and run pgAdmin server before setup database
+ ####Make sure your have add the path to postgres and run pgAdmin server before setup database
 <!-- ``` -->
 
 ## Set up database on window
