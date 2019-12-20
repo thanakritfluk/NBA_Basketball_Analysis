@@ -12,6 +12,7 @@ var teamRankRouter = require('./routes/team_rank');
 var getData = require('./routes/test_get_data');
 var topTenLeague = require('./routes/topten_league');
 var topTenConf = require('./routes/topten_conf');
+var shareApi = require('./routes/share_api')
 var app = express();
 
 // view engine setup
@@ -33,6 +34,7 @@ app.use('/all', getData)
 app.use('/team_rank', teamRankRouter);
 app.use('/topten_league', topTenLeague);
 app.use('/topten_conference', topTenConf);
+app.use('/dashboard/data', shareApi);
 app.use('/', indexRouter);
 
 // catch 404 and forward to error handler
