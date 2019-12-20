@@ -5,10 +5,10 @@
 ## Team member
 __Software and Knowledge Engineering, Kasetsart University__
 Full name| ID 
-------------| ------------|
-Thanakrit Daorueang | 6010545773|
-Pichaaun Popukdee| 6010545862|
-Supaluk Jareonsuk|6010545935|
+------------| ------------
+Thanakrit Daorueang | 6010545773
+Pichaaun Popukdee| 6010545862
+Supaluk Jareonsuk|6010545935
 
 ## Dependencies
 
