@@ -21,7 +21,7 @@ __Software and Knowledge Engineering, Kasetsart University__
 ## For Window setup
 
 <!-- ``` -->
- ### Make sure your have add the path to postgres and run pgAdmin server before setup database
++ Make sure your have add the path to postgres and run pgAdmin server before setup database
 <!-- ``` -->
 
 ## Set up database on window
