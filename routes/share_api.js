@@ -23,10 +23,8 @@ var getDashboard = function () {
 router.get('/', function(req, res, next) {
     getDashboard()
     .then(function success(result) {
-       res.render('data',  { 
-            
-            file: JSON.stringify(result),
-                     
+       res.render('data',  {             
+            file: JSON.stringify(result),                     
         });
     })
 });

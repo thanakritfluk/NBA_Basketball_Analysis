@@ -34,7 +34,7 @@ app.use('/all', getData)
 app.use('/team_rank', teamRankRouter);
 app.use('/topten_league', topTenLeague);
 app.use('/topten_conference', topTenConf);
-app.use('/dashboard/data', shareApi);
+app.use('/dashboard/score_data', shareApi);
 app.use('/', indexRouter);
 
 // catch 404 and forward to error handler
