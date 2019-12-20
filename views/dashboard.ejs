@@ -22,13 +22,18 @@
                         </label>
                     </div>
                 </div>
-                
+                <div class="down-col">
+                    <a onclick="exportJson(this);" class="btn btn-warning download-button">Download</a>
+                </div>
             </div>
             <div id="topten-table">
                 <div class="conf-table"><%- include topten_conference %></div>
                 <div class="league-table d-none"><%- include topten_league %></div>
             </div>            
         </div>        
-        <script src="/javascripts/main.js"></script>             
+        <script src="/javascripts/main.js"></script> 
+        <script>                              
+            file = '<%-file%>'            
+        </script>            
     </body>
 </html>

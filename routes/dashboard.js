@@ -25,6 +25,7 @@ router.get('/', function(req, res, next) {
     .then(function success(result) {
        res.render('dashboard',  { 
             data: result,
+            file: JSON.stringify(result),
             title: 'DAQ Basketball prediction',
             current_year: current_year,            
         });
