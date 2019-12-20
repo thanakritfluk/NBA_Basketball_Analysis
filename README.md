@@ -1,4 +1,48 @@
 # NBA_Basketball_Analysis
+## Overview 
+    A web application that shows the statistics of the TOP10 Teams also can see the ranking of the basketball team in this league in the past 5 years in a visualization that you easy to understand! Moreover, the comparison between the 2 teams competing together is provided too you can easily see the percentage of their winning rate!
+## Team member
+<b> Software and Knowledge Engineering, Kasetsart University
+Full name| ID 
+------------ | ------------|
+Thanakrit Daorueang | 6010545773
+Pichaaun Popukdee| 6010545862
+Supaluk Jareonsuk|6010545935
+
+## Dependencies
+
+
++ [nodejs](https://nodejs.org/en/download/) latest version
++ [postgres sql](https://nodejs.org/en/download/) version 10.1 or lastest
+
+## For Window setup
+
+<!-- ``` -->
+ > Make sure your have add the path to postgres and run pgAdmin server before setup database
+<!-- ``` -->
+
+## Set up database on window
+
+```
+npm install
+```
+
+```
+psql -U postgres -f ./scripts/db/setup_user.sql
+```
+```
+psql -U postgres -f ./scripts/db/create_db.sql
+```
+
+```
+psql -U postgres nba < ./scripts/db/setup_table.sql
+```
+
+```
+node scraper_api.js
+```
+
+
 
 ## Set up database on mac
 
@@ -13,7 +57,7 @@ Run this command on terminal
 ```
 
 
-## Start server
+## Run server
 ```
 nodemon server.js
 ```
